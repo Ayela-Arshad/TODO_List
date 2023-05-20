@@ -15,21 +15,21 @@ class Task extends JPanel {
     private boolean checked;
 
     Task() {
-        this.setPreferredSize(new Dimension(400, 20)); // set size of task
-        this.setBackground(Color.lightGray); // set background color of task
+        this.setPreferredSize(new Dimension(400, 20)); 
+        this.setBackground(Color.lightGray); 
 
-        this.setLayout(new BorderLayout()); // set layout of task
+        this.setLayout(new BorderLayout());
 
         checked = false;
 
-        index = new JLabel(""); // create index label
-        index.setPreferredSize(new Dimension(20, 20)); // set size of index label
-        index.setHorizontalAlignment(JLabel.CENTER); // set alignment of index label
-        this.add(index, BorderLayout.WEST); // add index label to task
+        index = new JLabel(""); 
+        index.setPreferredSize(new Dimension(20, 20)); 
+        index.setHorizontalAlignment(JLabel.CENTER); 
+        this.add(index, BorderLayout.WEST); 
 
-        taskName = new JTextField("Write something.."); // create task name text field
-        taskName.setBorder(BorderFactory.createEmptyBorder()); // remove border of text field
-        taskName.setBackground(Color.lightGray); // set background color of text field
+        taskName = new JTextField("Write something.."); 
+        taskName.setBorder(BorderFactory.createEmptyBorder()); 
+        taskName.setBackground(Color.lightGray); 
 
         this.add(taskName, BorderLayout.CENTER);
 
@@ -44,8 +44,8 @@ class Task extends JPanel {
     }
 
     public void changeIndex(int num) {
-        this.index.setText(num + ""); // num to String
-        this.revalidate(); // refresh
+        this.index.setText(num + ""); 
+        this.revalidate(); 
     }
 
     public JButton getDone() {
@@ -71,9 +71,9 @@ class List extends JPanel {
     List() {
 
         GridLayout layout = new GridLayout(10, 1);
-        layout.setVgap(5); // Vertical gap
+        layout.setVgap(5); 
 
-        this.setLayout(layout); // 10 tasks
+        this.setLayout(layout); 
         this.setPreferredSize(new Dimension(400, 560));
         this.setBackground(Color.WHITE);
     }
@@ -113,20 +113,20 @@ class Footer extends JPanel {
     Footer() {
         this.setPreferredSize(new Dimension(400, 60));
         this.setBackground(Color.WHITE);
-        addTask = new JButton("Add Task"); // add task button
-        addTask.setBorder(emptyBorder); // remove border
-        addTask.setFont(new Font("Times New Roman", Font.BOLD, 24)); // set font
-        addTask.setVerticalAlignment(JButton.BOTTOM); // align text to bottom
-        addTask.setBackground(Color.WHITE); // set background color
-        this.add(addTask); // add to footer
+        addTask = new JButton("Add Task"); 
+        addTask.setBorder(emptyBorder);
+        addTask.setFont(new Font("Times New Roman", Font.BOLD, 24)); 
+        addTask.setVerticalAlignment(JButton.BOTTOM); 
+        addTask.setBackground(Color.WHITE); 
+        this.add(addTask); 
 
-        this.add(Box.createHorizontalStrut(20)); // Space between buttons
+        this.add(Box.createHorizontalStrut(20)); 
 
-        clear = new JButton("Clear finished tasks"); // clear button
-        clear.setFont(new Font("Times New Roman", Font.BOLD, 24)); // set font
-        clear.setBorder(emptyBorder); // remove border
-        clear.setBackground(Color.WHITE); // set background color
-        this.add(clear); // add to footer
+        clear = new JButton("Clear finished tasks"); 
+        clear.setFont(new Font("Times New Roman", Font.BOLD, 24));
+        clear.setBorder(emptyBorder); 
+        clear.setBackground(Color.WHITE); 
+        this.add(clear); 
     }
 
     public JButton getNewTask() {
@@ -140,16 +140,14 @@ class Footer extends JPanel {
 
 class TitleBar extends JPanel {
 
-    Color lightColor = new Color(252, 221, 176);
-
     TitleBar() {
-        this.setPreferredSize(new Dimension(400, 80)); // Size of the title bar
-        this.setBackground(Color.WHITE); // Color of the title bar
-        JLabel titleText = new JLabel("WorkIt: My To-Do List"); // Text of the title bar
-        titleText.setPreferredSize(new Dimension(300, 100)); // Size of the text
-        titleText.setFont(new Font("Times New Roman", Font.ITALIC, 30)); // Font of the text
-        titleText.setHorizontalAlignment(JLabel.CENTER); // Align the text to the center
-        this.add(titleText); // Add the text to the title bar
+        this.setPreferredSize(new Dimension(400, 80)); 
+        this.setBackground(Color.WHITE); 
+        JLabel titleText = new JLabel("WorkIt: My To-Do List"); 
+        titleText.setPreferredSize(new Dimension(300, 100)); 
+        titleText.setFont(new Font("Times New Roman", Font.ITALIC, 30)); 
+        titleText.setHorizontalAlignment(JLabel.CENTER);
+        this.add(titleText); 
     }
 }
 
@@ -163,17 +161,17 @@ class AppFrame extends JFrame {
     private JButton clear;
 
     AppFrame() {
-        this.setSize(400, 600); // 400 width and 600 height
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close on exit
-        this.setVisible(true); // Make visible
+        this.setSize(400, 600); 
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        this.setVisible(true); 
 
         title = new TitleBar();
         footer = new Footer();
         list = new List();
 
-        this.add(title, BorderLayout.NORTH); // Add title bar on top of the screen
-        this.add(footer, BorderLayout.SOUTH); // Add footer on bottom of the screen
-        this.add(list, BorderLayout.CENTER); // Add list in middle of footer and title
+        this.add(title, BorderLayout.NORTH); 
+        this.add(footer, BorderLayout.SOUTH); 
+        this.add(list, BorderLayout.CENTER); 
 
         newTask = footer.getNewTask();
         clear = footer.getClear();
@@ -206,8 +204,8 @@ class AppFrame extends JFrame {
         clear.addMouseListener(new MouseAdapter() {
             @override
             public void mousePressed(MouseEvent e) {
-                list.removeCompletedTasks(); // Removes all tasks that are done
-                repaint(); // Repaints the list
+                list.removeCompletedTasks(); 
+                repaint(); 
             }
         });
     }
@@ -217,7 +215,7 @@ class AppFrame extends JFrame {
 public class ToDoList {
 
     public static void main(String args[]) {
-        AppFrame frame = new AppFrame(); // Create the frame
+        AppFrame frame = new AppFrame(); 
     }
 }
 
