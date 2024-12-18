@@ -16,7 +16,7 @@ meeans you are not in the repo so to beinn the repo do
 cd folder
 
 5-create your own branch 
-git checkout -b branchnameadd 
+git checkout -b branchnameadd //or to checkout a branch write, git checkout branchname
 
 6-check branch
 git branch 
