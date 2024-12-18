@@ -1,4 +1,4 @@
-package com.mycompany.todolist;
+//package com.mycompany.todolist;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -181,14 +181,14 @@ class AppFrame extends JFrame {
 
     public void addListeners() {
         newTask.addMouseListener(new MouseAdapter() {
-            @override
+            @Override
             public void mousePressed(MouseEvent e) {
                 Task task = new Task();
                 list.add(task); // Add new task to list
                 list.updateNumbers(); // Updates the numbers of the tasks
 
                 task.getDone().addMouseListener(new MouseAdapter() {
-                    @override
+                    @Override
                     public void mousePressed(MouseEvent e) {
 
                         task.changeState(); // Change color of task
@@ -202,7 +202,7 @@ class AppFrame extends JFrame {
         });
 
         clear.addMouseListener(new MouseAdapter() {
-            @override
+            @Override
             public void mousePressed(MouseEvent e) {
                 list.removeCompletedTasks(); 
                 repaint(); 
@@ -219,5 +219,3 @@ public class ToDoList {
     }
 }
 
-@interface override {
-}
