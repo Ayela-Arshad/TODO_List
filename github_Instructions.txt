@@ -8,8 +8,8 @@ git config --global user.name
 git config --global user.email
 
 3-If not set, do following:
-git config --global user.name "Radia Riaz"
-git config --global user.email "radia_riaz@outlook.com"
+git config --global user.name "name"
+git config --global user.email "email"
 
 4-If you are not inside the git repository like jo ~/Desktop/Mywork etc ke agay agar repository name i.e Movie-Streaming-Website nahi araha
 meeans you are not in the repo so to beinn the repo do 
@@ -31,5 +31,3 @@ git commit -m "Changes made successfully"
 git push origin bramchname
 
 
-//cloning a single branch
-git clone --branch main --single-branch https://github.com/SidraKayenat/Movie-Streaming-Website.git
